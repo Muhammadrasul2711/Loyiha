@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+  <h2>Watches List</h2>
+  <a href="{% url 'watch_create' %}">Create New Watch</a>
+  <ul>
+    {% for watch in watches %}
+      <li>
+        <a href="{% url 'watch_detail' watch.id %}">{{ watch.name }}</a>
+        (<a href="{% url 'watch_update' watch.id %}">Edit</a>,
+        <a href="{% url 'watch_delete' watch.id %}">Delete</a>)
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

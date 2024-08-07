@@ -1,0 +1,9 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+  <h2>{{ qurulma.name }}</h2>
+  <p>{{ qurulma.brand_name }}</p>
+  <p>{{ qurulma.price }}</p>
+  <img src="{{ qurulma.img.url }}" alt="{{ qurulma.name }}">
+  <p><a href="{% url 'qurulmalar_update' qurulma.pk %}">yangilash</a></p>
+  <p><a href="{% url 'qurulmalar_delete' qurulma.pk %}">o'chrish</a></p>
+{% endblock %}

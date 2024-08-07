@@ -1,0 +1,8 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+  <h2>{{ watch.name }}</h2>
+  <p>{{ watch.title }}</p>
+  <img src="{{ watch.img.url }}" alt="{{ watch.name }}">
+  <p><a href="{% url 'watch_update' watch.id %}">Edit</a></p>
+  <p><a href="{% url 'watch_delete' watch.id %}">Delete</a></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+  <h2>qurulmar ro'yhati</h2>
+  <a href="{% url 'watch_create' %}">yangi qurlmalar yaratish</a>
+  <ul>
+    {% for watch in watches %}
+      <li>
+        <a href="{% url 'qurulamar_detail.html' qurulmalar.id %}">{{ qurulmalar.name }}</a>
+        (<a href="{% url 'qurulmalar_form.html' form.id %}">yangilash</a>,
+        <a href="{% url 'qurulmalar_confirm_delete.html' qurulma.id %}">o'chrish</a>)
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

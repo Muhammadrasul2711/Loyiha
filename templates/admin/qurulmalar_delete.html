@@ -1,0 +1,10 @@
+{% extends 'admin/base.html' %}
+{% block content %}
+  <h2>qurulmani o'chrish</h2>
+  <p> siz bunni o'chrmoqchmisz ? "{{ qurulma.name }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">ha o'chirmoqchiman</button>
+  </form>
+  <a href="{% url 'qurulmalar_detail' qurulma.pk %}">Cancel</a>
+{% endblock %}
